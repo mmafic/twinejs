@@ -6,7 +6,7 @@ import {importStories} from '../../util/import';
 import {storyFromTwee} from '../../util/twee';
 
 export interface FileChooserProps {
-	onChange: (file: File, stories: Story[]) => void;
+	onChange: (stories: Story[]) => void;
 }
 
 export const FileChooser: React.FC<FileChooserProps> = props => {
@@ -15,9 +15,9 @@ export const FileChooser: React.FC<FileChooserProps> = props => {
 
 	function handleChange(file: File, data: string) {
 		if (/\.html$/.test(file.name)) {
-			onChange(file, importStories(data));
+			onChange(importStories(data));
 		} else {
-			onChange(file, [storyFromTwee(data)]);
+			onChange([storyFromTwee(data)]);
 		}
 	}
 

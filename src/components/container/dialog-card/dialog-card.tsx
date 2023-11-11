@@ -26,7 +26,7 @@ export interface DialogCardProps {
 	onChangeCollapsed: (value: boolean) => void;
 	onChangeHighlighted: (value: boolean) => void;
 	onChangeMaximized: (value: boolean) => void;
-	onClose: (event?: React.KeyboardEvent | React.MouseEvent) => void;
+	onClose: (eventOrData?: React.KeyboardEvent | React.MouseEvent | {}) => void;
 }
 
 export const DialogCard: React.FC<DialogCardProps> = props => {

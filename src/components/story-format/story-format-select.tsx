@@ -7,10 +7,11 @@ export interface StoryFormatSelectProps
 	extends Omit<TextSelectProps, 'options' | 'value'> {
 	formats: StoryFormat[];
 	selectedFormat: StoryFormat;
+	disabled?: boolean;
 }
 
 export const StoryFormatSelect: React.FC<StoryFormatSelectProps> = props => {
-	const {formats, selectedFormat, ...other} = props;
+	const {formats, selectedFormat, disabled, ...other} = props;
 	const {t} = useTranslation();
 	const loadingFormats = formats.filter(
 		format => format.loadState === 'loading'
@@ -21,7 +22,7 @@ export const StoryFormatSelect: React.FC<StoryFormatSelectProps> = props => {
 		)
 	);
 	const options = visibleFormats.map(format => ({
-		disabled: false,
+		disabled: disabled || false,
 		label: `${format.name} ${format.version}`,
 		value: format.id
 	}));

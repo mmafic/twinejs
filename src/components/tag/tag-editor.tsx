@@ -13,10 +13,11 @@ export interface TagEditorProps {
 	name: string;
 	onChangeColor: (color: Color) => void;
 	onChangeName: (name: string) => void;
+	readonly?: boolean;
 }
 
 export const TagEditor: React.FC<TagEditorProps> = props => {
-	const {allTags, color, name, onChangeColor, onChangeName} = props;
+	const {allTags, color, name, onChangeColor, onChangeName, readonly} = props;
 	const [newName, setNewName] = React.useState(name);
 	const {t} = useTranslation();
 
@@ -34,6 +35,7 @@ export const TagEditor: React.FC<TagEditorProps> = props => {
 				{props.name}
 			</span>
 			<PromptButton
+				disabled={readonly}
 				icon={<IconWriting />}
 				label={t('common.rename')}
 				onChange={e => setNewName(e.target.value.replace(/\s/g, '-'))}
@@ -46,7 +48,8 @@ export const TagEditor: React.FC<TagEditorProps> = props => {
 				onChange={e => onChangeColor(e.target.value)}
 				options={colors.map(color => ({
 					label: t(`colors.${color}`),
-					value: color
+					value: color,
+					disabled: readonly,
 				}))}
 				value={color ?? ''}
 			>

@@ -8,6 +8,12 @@ export interface UseStoryLaunchProps {
 	testStory: (storyId: string, startPassageId?: string) => Promise<void>;
 }
 
+function parseStoryId(storyId: string) {
+	const parts = storyId.split('url:');
+	if (parts.length < 2) return { preview: false };
+	return { preview: true, storyUrl: parts[1] };
+}
+
 /**
  * Provides functions to launch a story that include the correct handling for
  * both web and Electron contexts.
@@ -51,18 +57,23 @@ export function useStoryLaunch(): UseStoryLaunchProps {
 
 	return {
 		playStory: async storyId => {
-			window.open(`#/stories/${storyId}/play`, '_blank');
+			const { preview, storyUrl } = parseStoryId(storyId);
+			let uri = preview ? '#/preview/play' : `#/stories/${storyId}/play`;
+			if (preview) uri += `?url=${storyUrl}`;
+			window.open(uri, '_blank');
 		},
 		proofStory: async storyId => {
-			window.open(`#/stories/${storyId}/proof`, '_blank');
+			const { preview, storyUrl } = parseStoryId(storyId);
+			let uri = preview ? '#/preview/proof' : `#/stories/${storyId}/proof`;
+			if (preview) uri += `?url=${storyUrl}`;
+			window.open(uri, '_blank');
 		},
 		testStory: async (storyId, startPassageId) => {
-			window.open(
-				startPassageId
-					? `#/stories/${storyId}/test/${startPassageId}`
-					: `#/stories/${storyId}/test`,
-				'_blank'
-			);
+			const { preview, storyUrl } = parseStoryId(storyId);
+			let uri = preview ? '#/preview/test' : `#/stories/${storyId}/test`;
+			if (startPassageId) uri += `/${startPassageId}`;
+			if (preview) uri += `?url=${storyUrl}`;
+			window.open(uri, '_blank');
 		}
 	};
 }

@@ -2,13 +2,13 @@ import {fireEvent, render, screen} from '@testing-library/react';
 import {axe} from 'jest-axe';
 import * as React from 'react';
 import {FakeStateProvider} from '../../../../../test-util';
-import {ImportStoryButton} from '../import-story-button';
+import {ImportStoryFromFileButton} from '../import-story-from-file-button';
 
 describe('<ImportStoryButton>', () => {
 	function renderComponent() {
 		return render(
 			<FakeStateProvider>
-				<ImportStoryButton />
+				<ImportStoryFromFileButton />
 			</FakeStateProvider>
 		);
 	}

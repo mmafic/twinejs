@@ -94,7 +94,7 @@ const InnerPassageEditStack: React.FC<PassageEditStackProps> = props => {
 							headerLabel={passageNames[index]}
 							key={passageId}
 							maximizable
-							onClose={event => handleClose(passageId, event)}
+							onClose={event => event instanceof Event ? handleClose(passageId, event as unknown as React.KeyboardEvent | React.MouseEvent) : handleClose(passageId)}
 						>
 							<PassageEditContents passageId={passageId} storyId={storyId} />
 						</DialogCard>

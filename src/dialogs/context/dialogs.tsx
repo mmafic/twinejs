@@ -45,7 +45,10 @@ export const Dialogs: React.FC = () => {
 							dispatch({type: 'setDialogMaximized', maximized, index}),
 						onChangeProps: (props: Record<string, any>) =>
 							dispatch({type: 'setDialogProps', index, props}),
-						onClose: () => dispatch({type: 'removeDialog', index})
+						onClose: (...args: any[]) => {
+							dispatch({type: 'removeDialog', index});
+							dialog.props?.onClose?.(...args);
+						}
 					};
 
 					return (

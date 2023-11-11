@@ -26,7 +26,7 @@ export const DeletePassagesButton: React.FC<
 		return passages.some(passage => story.startPassage === passage.id);
 	}, [passages, story.startPassage]);
 	const handleClick = React.useCallback(() => {
-		if (passages.length === 0) {
+		if (passages.length === 0 || story.preview) {
 			return;
 		}
 

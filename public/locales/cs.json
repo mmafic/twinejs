@@ -48,7 +48,7 @@
 		"passageTags": {},
 		"storyInfo": {"stats": {"title": "Statistika příběhu"}},
 		"storyJavaScript": {},
-		"storySearch": {"title": "Najít a nahradit", "replaceWith": "Nahradit"},
+			"storySearch": {"title": "Najít a nahradit", "searchOnlyTitle": "Najít", "replaceWith": "Nahradit"},
 		"storyStylesheet": {
 			"explanation": "Jakýkoliv CSS skript zadaný zde přepíše výchozí vzhled vašeho příběhu."
 		},
@@ -61,6 +61,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Najít a nahradit",
+				"find": "Najít"
+			},
 			"topBar": {
 				"addPassage": "Místnost",
 				"editJavaScript": "Upravit JavaScript příběhu",

@@ -25,7 +25,10 @@
 		"edit": "Edit",
 		"editCount": "Edit ({{count}})",
 		"help": "Help",
-		"import": "Import",
+		"importFromFile": "Import From File",
+		"importFromUrl": "Import From URL",
+		"preview": "Preview",
+		"download": "Download",
 		"maximize": "Maximize",
 		"more": "More",
 		"new": "New",
@@ -196,6 +199,8 @@
 		"storyImport": {
 			"deselectAll": "Deselect All",
 			"filePrompt": "To import stories into Twine, upload an archive, published story, or Twee source file below.",
+			"enterUrl": "Enter story URL: ",
+			"urlDisclaimer": "Make sure you trust the URL before entering it here. Twinery is not responsible for any damages or loss of private data that comes from accessing third-party websites or running scripts inside Twine files.",
 			"importDifferentFile": "Import a Different File",
 			"importSelected": "Import Selected Files",
 			"importThisStory": "Import This Story",
@@ -226,6 +231,7 @@
 		},
 		"storySearch": {
 			"title": "Find and Replace",
+			"searchOnlyTitle": "Find",
 			"find": "Find",
 			"includePassageNames": "Include Passage Names",
 			"matchCase": "Match Case",
@@ -295,16 +301,22 @@
 		}
 	},
 	"routes": {
+		"preview": {
+			"disclaimerPrompt": "Make sure you trust the URL before accessing the page. Twinery is not responsible for any damages or loss of private data that comes from accessing third-party websites or running scripts inside Twine files. Continue?"
+		},
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Find and Replace",
+				"find": "Find",
 				"goTo": "Go To",
 				"javaScript": "JavaScript",
 				"passageTags": "Passage Tags",
 				"snapToGrid": "Snap to Grid",
 				"startStoryHere": "Start Story Here",
 				"stylesheet": "Stylesheet",
-				"testFromHere": "Test From Here"
+				"testFromHere": "Test From Here",
+				"saveToLibrary": "Save To Library",
+				"savedToLibrary": "Saved To Library"
 			},
 			"topBar": {
 				"editJavaScript": "Edit Story JavaScript",

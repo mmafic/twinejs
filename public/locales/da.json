@@ -47,7 +47,7 @@
 		"storyJavaScript": {
 			"explanation": "Javascript indtastet her vil blive kørt med det samme når din historie åbnes i en browser."
 		},
-		"storySearch": {"title": "Søg og erstat", "replaceWith": "Erstat med"},
+			"storySearch": {"title": "Søg og erstat", "searchOnlyTitle": "Søg", "replaceWith": "Erstat med"},
 		"storyStylesheet": {
 			"explanation": "CSS indtastet her vil overskrive standardudseendet på din historie."
 		},
@@ -60,6 +60,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Søg og erstat",
+				"find": "Søg"
+			},
 			"topBar": {
 				"addPassage": "Passage",
 				"editJavaScript": "Redigér historiens JavaScript",

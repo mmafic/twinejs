@@ -54,6 +54,7 @@ export const StoryDetailsDialog: React.FC<StoryDetailsDialogProps> = props => {
 						story.storyFormat,
 						story.storyFormatVersion
 					)}
+					disabled={story.preview}
 				>
 					{t('common.storyFormat')}
 				</StoryFormatSelect>
@@ -72,6 +73,7 @@ export const StoryDetailsDialog: React.FC<StoryDetailsDialogProps> = props => {
 						dispatch(updateStory(stories, story, {snapToGrid: value}))
 					}
 					value={story.snapToGrid}
+					disabled={story.preview}
 				/>
 			</ButtonBar>
 			<CardContent>

@@ -25,7 +25,8 @@
 		"edit": "Bearbeiten",
 		"editCount": "Bearbeitung ({{count}})",
 		"help": "Hilfe",
-		"import": "Import",
+		"importFromFile": "Import aus Datei",
+		"importFromUrl": "Import aus URL",
 		"maximize": "Maximieren",
 		"more": "Mehr",
 		"new": "Neu",
@@ -227,6 +228,7 @@
 		},
 		"storySearch": {
 			"title": "Suchen und Ersetzen",
+			"searchOnlyTitle": "Suchen",
 			"find": "Suche",
 			"includePassageNames": "Namen der Abschnitte durchsuchen",
 			"matchCase": "Groß-/Kleinschreibung beachten",
@@ -283,6 +285,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Suchen und Ersetzen",
+				"find": "Suchen",
 				"goTo": "Gehe Zu",
 				"javaScript": "JavaScript",
 				"passageTags": "Abschnitt Tags",

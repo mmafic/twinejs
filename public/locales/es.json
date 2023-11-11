@@ -52,6 +52,7 @@
 		},
 		"storySearch": {
 			"title": "Buscar y reemplazar",
+			"searchOnlyTitle": "Buscar",
 			"replaceWith": "Reemplazar con"
 		},
 		"storyStylesheet": {
@@ -66,6 +67,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Buscar y reemplazar",
+				"find": "Buscar"
+			},
 			"topBar": {
 				"addPassage": "Pasaje",
 				"editJavaScript": "Editar JavaScript de la historia",

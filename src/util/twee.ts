@@ -134,12 +134,11 @@ export function passageFromTwee(source: string): Omit<Passage, 'story'> {
 /**
  * Converts a story from Twee source.
  */
-export function storyFromTwee(source: string) {
-	const id = uuid();
-
+export function storyFromTwee(source: string, id = uuid(), preview?: boolean) {
 	const story: Story = {
 		...storyDefaults(),
 		id,
+		preview,
 		ifid: uuid(),
 		lastUpdate: new Date(),
 		passages: source

@@ -34,12 +34,13 @@ export const InnerStoryListRoute: React.FC = () => {
 	);
 
 	const visibleStories = React.useMemo(() => {
-		const filteredStories =
+		let filteredStories = stories.filter(story => !story.preview);
+		filteredStories =
 			prefs.storyListTagFilter.length > 0
-				? stories.filter(story =>
+				? filteredStories.filter(story =>
 						story.tags.some(tag => prefs.storyListTagFilter.includes(tag))
 				  )
-				: stories;
+				: filteredStories;
 
 		switch (prefs.storyListSort) {
 			case 'date':

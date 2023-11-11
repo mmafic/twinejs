@@ -18,12 +18,14 @@ export const StoryActions: React.FC<StoryActionsProps> = props => {
 
 	return (
 		<ButtonBar>
-			<FindReplaceButton story={story} />
-			<RenameStoryButton
-				existingStories={stories}
-				onRename={name => dispatch(updateStory(stories, story, {name}))}
-				story={story}
-			/>
+			<FindReplaceButton story={story} disableReplace={story.preview} />
+			{!story.preview && (
+				<RenameStoryButton
+					existingStories={stories}
+					onRename={name => dispatch(updateStory(stories, story, {name}))}
+					story={story}
+				/>
+			)}
 			<DetailsButton story={story} />
 			<PassageTagsButton story={story} />
 			<JavaScriptButton story={story} />

@@ -56,6 +56,7 @@ export const PassageTagsDialog: React.FC<PassageTagsDialogProps> = props => {
 							name={tag}
 							onChangeColor={color => handleChangeColor(tag, color)}
 							onChangeName={newName => handleChangeTagName(tag, newName)}
+							readonly={story.preview}
 						/>
 					))
 				) : (

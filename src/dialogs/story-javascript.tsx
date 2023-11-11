@@ -40,7 +40,7 @@ export const StoryJavaScriptDialog: React.FC<StoryJavaScriptDialogProps> = props
 		>
 			<ButtonBar>
 				<UndoRedoButtons editor={cmEditor} watch={story.script} />
-				<IndentButtons editor={cmEditor} />
+				<IndentButtons editor={cmEditor} disabled={story.preview} />
 			</ButtonBar>
 			<DialogEditor>
 				<CodeArea
@@ -55,7 +55,8 @@ export const StoryJavaScriptDialog: React.FC<StoryJavaScriptDialogProps> = props
 						autofocus: true,
 						lineWrapping: true,
 						mode: 'javascript',
-						placeholder: t('dialogs.storyJavaScript.explanation')
+						placeholder: t('dialogs.storyJavaScript.explanation'),
+						readOnly: story.preview,
 					}}
 					value={story.script}
 				/>

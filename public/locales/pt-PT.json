@@ -25,7 +25,8 @@
 		"edit": "Editar",
 		"editCount": "Editar ({{count}})",
 		"help": "Ajuda",
-		"import": "Importar",
+		"importFromFile": "Importar de ficheiro",
+		"importFromUrl": "Importar de URL",
 		"maximize": "Maximizar",
 		"more": "Mais",
 		"new": "Novo",
@@ -226,6 +227,7 @@
 		},
 		"storySearch": {
 			"title": "Encontrar e Substituir",
+			"searchOnlyTitle": "Encontrar",
 			"find": "Encontrar",
 			"includePassageNames": "Incluir os Títulos das Passagens",
 			"matchCase": "Sensível a maiúsculas/minúsculas",
@@ -285,6 +287,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Encontrar e Substituir",
+				"find": "Encontrar",
 				"goTo": "Ir Para",				
 				"javaScript": "JavaScript",
 				"passageTags": "Etiquetas das Passagens",

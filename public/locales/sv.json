@@ -50,7 +50,7 @@
 		"storyJavaScript": {
 			"explanation": "JavaScripts som skrivs in här kommer att köras omedelbart när din historia öppnas i en webläsare."
 		},
-		"storySearch": {"title": "Sök och ersätt", "replaceWith": "Ersätt med"},
+		"storySearch": {"title": "Sök och ersätt", "searchOnlyTitle": "Sök", "replaceWith": "Ersätt med"},
 		"storyStylesheet": {
 			"explanation": "Om CSS-kod skrivs in här kommer den att gå före det övergipande utseendet för din historia."
 		},
@@ -63,6 +63,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Sök",
+				"find": "Sök"
+			},
 			"topBar": {
 				"addPassage": "Passage",
 				"editJavaScript": "Ändra historiens JavaScript",

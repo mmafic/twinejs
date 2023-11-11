@@ -52,6 +52,7 @@
 		},
 		"storySearch": {
 			"title": "Achar e Substituir",
+			"searchOnlyTitle": "Achar",
 			"replaceWith": "Substituir Por"
 		},
 		"storyStylesheet": {
@@ -66,6 +67,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Zoek en Vervang",
+				"find": "Zoek"
+			},
 			"topBar": {
 				"addPassage": "Passagem",
 				"editJavaScript": "Editar JavaScript da História",

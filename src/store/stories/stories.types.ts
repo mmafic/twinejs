@@ -74,6 +74,10 @@ export interface Story {
 	 */
 	passages: Passage[];
 	/**
+	 * True for stories loaded from URL that have not been imported into the library yet
+	 */
+	preview?: boolean;
+	/**
 	 * Author-created JavaScript associated with the story.
 	 */
 	script: string;

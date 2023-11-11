@@ -10,25 +10,29 @@ import {importStories, Story, useStoriesContext} from '../../store/stories';
 import {useStoriesRepair} from '../../store/use-stories-repair';
 import {FileChooser} from './file-chooser';
 import {StoryChooser} from './story-chooser';
+import {UrlInput} from './url-input';
 import './story-import.css';
 
-export type StoryImportDialogProps = Omit<DialogCardProps, 'headerLabel'>;
+export interface StoryImportDialogProps extends Omit<DialogCardProps, 'headerLabel'> {
+	fromUrl?: boolean;
+	providedStories?: Story[];
+};
 
 export const StoryImportDialog: React.FC<StoryImportDialogProps> = props => {
-	const {onClose} = props;
+	const {onClose, fromUrl, providedStories} = props;
 	const {t} = useTranslation();
 	const repairStories = useStoriesRepair();
 	const {dispatch, stories: existingStories} = useStoriesContext();
-	const [file, setFile] = React.useState<File>();
+	const [loaded, setLoaded] = React.useState(false);
 	const [stories, setStories] = React.useState<Story[]>([]);
 
 	function handleImport(stories: Story[]) {
 		dispatch(importStories(stories, existingStories));
 		repairStories();
-		onClose();
+		onClose(true);
 	}
 
-	function handleFileChange(file: File, stories: Story[]) {
+	function handleStories(stories: Story[]) {
 		// If there are no conflicts in the stories, import them now. Otherwise, set
 		// them in state and let the user choose via <StoryChooser>.
 
@@ -36,16 +40,21 @@ export const StoryImportDialog: React.FC<StoryImportDialogProps> = props => {
 			stories.length === 0 ||
 			stories.some(story =>
 				existingStories.some(
-					existing => storyFileName(existing) === storyFileName(story)
+					existing => !existing.preview && storyFileName(existing) === storyFileName(story)
 				)
 			)
 		) {
-			setFile(file);
+			setLoaded(true);
 			setStories(stories);
 		} else {
 			handleImport(stories);
 		}
 	}
+
+	React.useEffect(() => {
+		if (!providedStories) return;
+		handleStories(providedStories);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<DialogCard
@@ -55,15 +64,22 @@ export const StoryImportDialog: React.FC<StoryImportDialogProps> = props => {
 			headerLabel={t('dialogs.storyImport.title')}
 		>
 			<CardContent>
-				<FileChooser onChange={handleFileChange} />
-				{file && stories.length > 0 && (
+				{!providedStories && (
+					fromUrl
+						? <>
+								<span>{t('dialogs.storyImport.urlDisclaimer')}</span>
+								<UrlInput onDownload={handleStories} />
+							</>
+						: <FileChooser onChange={handleStories} />
+				)}
+				{stories.length > 0 && (
 					<StoryChooser
 						existingStories={existingStories}
 						onImport={handleImport}
 						stories={stories}
 					/>
 				)}
-				{file && stories.length === 0 && (
+				{loaded && stories.length === 0 && (
 					<p>{t('dialogs.storyImport.noStoriesInFile')}</p>
 				)}
 			</CardContent>

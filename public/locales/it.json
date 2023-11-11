@@ -47,6 +47,7 @@
 		},
 		"storySearch": {
 			"title": "Trova e sostituisci",
+			"searchOnlyTitle": "Trova",
 			"replaceWith": "Sostituisci Con"
 		},
 		"storyStylesheet": {
@@ -61,6 +62,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Trova e sostituisci",
+				"find": "Trova"
+			},
 			"topBar": {
 				"addPassage": "Passaggio",
 				"editJavaScript": "Modifica il codice JavaScript del Racconto",

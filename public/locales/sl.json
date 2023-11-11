@@ -45,7 +45,7 @@
 		"storyJavaScript": {
 			"explanation": "Kakršna koli JavaScrip koda, ki jo vnesete sem, se bo izvedla takoj, ko zgodbo odprete v spletnem brskalniku."
 		},
-		"storySearch": {"title": "Najdi in zamenjaj", "replaceWith": "Zamenjaj z"},
+		"storySearch": {"title": "Najdi in zamenjaj", "searchOnlyTitle": "Najdi", "replaceWith": "Zamenjaj z"},
 		"storyStylesheet": {
 			"explanation": "Kakršni koli slogi CSS, ki jih vnesete sem, bodo spremenili privzeti videz vaše zgodbe."
 		},
@@ -58,6 +58,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Najdi",
+				"find": "Najdi"
+			},
 			"topBar": {
 				"addPassage": "Prehod",
 				"editJavaScript": "Urejaj JavaScript",

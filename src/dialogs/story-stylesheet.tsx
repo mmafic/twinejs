@@ -40,7 +40,7 @@ export const StoryStylesheetDialog: React.FC<StoryStylesheetDialogProps> = props
 		>
 			<ButtonBar>
 				<UndoRedoButtons editor={cmEditor} watch={story.script} />
-				<IndentButtons editor={cmEditor} />
+				<IndentButtons editor={cmEditor} disabled={story.preview} />
 			</ButtonBar>
 			<DialogEditor>
 				<CodeArea
@@ -55,7 +55,8 @@ export const StoryStylesheetDialog: React.FC<StoryStylesheetDialogProps> = props
 						autofocus: true,
 						lineWrapping: true,
 						mode: 'css',
-						placeholder: t('dialogs.storyStylesheet.explanation')
+						placeholder: t('dialogs.storyStylesheet.explanation'),
+						readOnly: story.preview,
 					}}
 					value={story.stylesheet}
 				/>

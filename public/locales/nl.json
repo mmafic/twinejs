@@ -25,7 +25,8 @@
 		"edit": "Bewerken",
 		"editCount": "Bewerken ({{count}})",
 		"help": "Help",
-		"import": "Importeren",
+		"importFromFile": "Importeren uit bestand",
+		"importFromUrl": "Importeren vanaf URL",
 		"maximize": "Maximaliseren",
 		"more": "Meer",
 		"new": "Nieuw",
@@ -222,6 +223,7 @@
 		},
 		"storySearch": {
 			"title": "Zoek en Vervang",
+			"searchOnlyTitle": "Zoek",
 			"find": "Zoek",
 			"includePassageNames": "Passagenamen opnemen",
 			"matchCase": "Match Case",
@@ -278,6 +280,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Zoek en Vervang",
+				"find": "Zoek",
 				"javaScript": "JavaScript",
 				"passageTags": "Passage Labels",
 				"snapToGrid": "Uitlijnen op raster",

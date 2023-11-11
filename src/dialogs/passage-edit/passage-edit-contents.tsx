@@ -23,7 +23,7 @@ export interface PassageEditContentsProps {
 export const PassageEditContents: React.FC<
 	PassageEditContentsProps
 > = props => {
-	const {disabled, passageId, storyId} = props;
+	const {passageId, storyId} = props;
 	const [storyFormatExtensionsEnabled, setStoryFormatExtensionsEnabled] =
 		React.useState(true);
 	const [editorCrashed, setEditorCrashed] = React.useState(false);
@@ -33,6 +33,7 @@ export const PassageEditContents: React.FC<
 	const {formats} = useStoryFormatsContext();
 	const passage = passageWithId(stories, storyId, passageId);
 	const story = storyWithId(stories, storyId);
+	const disabled = props.disabled || story.preview;
 	const storyFormat = formatWithNameAndVersion(
 		formats,
 		story.storyFormat,

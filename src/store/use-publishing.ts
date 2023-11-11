@@ -11,14 +11,14 @@ import {
 	loadFormatProperties,
 	useStoryFormatsContext
 } from './story-formats';
-import {storyWithId, useStoriesContext} from './stories';
+import {Story, storyWithId, useStoriesContext} from './stories';
 import {getAppInfo} from '../util/app-info';
 
 export interface UsePublishingProps {
-	proofStory: (storyId: string) => Promise<string>;
+	proofStory: (storyOrId: Story|string) => Promise<string>;
 	publishArchive: (storyIds?: string[]) => Promise<string>;
 	publishStory: (
-		storyId: string,
+		storyOrId: Story|string,
 		publishOptions?: PublishOptions
 	) => Promise<string>;
 	publishStoryData: (storyId: string) => string;
@@ -43,8 +43,8 @@ export function usePublishing(): UsePublishingProps {
 			[stories]
 		),
 		proofStory: React.useCallback(
-			async storyId => {
-				const story = storyWithId(stories, storyId);
+			async storyOrId => {
+				const story = typeof storyOrId === 'string' ? storyWithId(stories, storyOrId) : storyOrId;
 				const format = formatWithNameAndVersion(
 					formats,
 					prefs.proofingFormat.name,
@@ -73,8 +73,8 @@ export function usePublishing(): UsePublishingProps {
 			]
 		),
 		publishStory: React.useCallback(
-			async (storyId, publishOptions) => {
-				const story = storyWithId(stories, storyId);
+			async (storyOrId, publishOptions) => {
+				const story = typeof storyOrId === 'string' ? storyWithId(stories, storyOrId) : storyOrId;
 				const format = formatWithNameAndVersion(
 					formats,
 					story.storyFormat,

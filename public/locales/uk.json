@@ -25,7 +25,8 @@
 		"edit": "Редагувати",
 		"editCount": "Редагувати ({{count}})",
 		"help": "Допомога",
-		"import": "Імпорт",
+		"importFromFile": "Імпорт з файлу",
+		"importFromUrl": "Імпорт з URL",
 		"maximize": "На весь екран",
 		"more": "Більше",
 		"new": "Створити",
@@ -224,6 +225,7 @@
 		},
 		"storySearch": {
 			"title": "Знайти і замінити",
+			"searchOnlyTitle": "Знайти",
 			"find": "Знайти",
 			"includePassageNames": "Включати назви параграфів",
 			"matchCase": "Співпадіння за регістром",
@@ -281,6 +283,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Знайти та замінити",
+				"find": "Знайти",
 				"javaScript": "JavaScript",
 				"passageTags": "Мітки параграфів",
 				"snapToGrid": "Прив'язка до сітки",

@@ -8,7 +8,7 @@ export function updateStory(
 ) {
 	if (
 		'name' in storyProps &&
-		state.some(story => story.name === storyProps.name && story.id !== storyId)
+		state.some(story => !story.preview && story.name === storyProps.name && story.id !== storyId)
 	) {
 		console.warn(
 			`There is another story in state with name "${storyProps.name}", taking no action`

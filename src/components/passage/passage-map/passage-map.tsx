@@ -15,6 +15,7 @@ export interface PassageMapProps {
 	onEdit: (passage: Passage) => void;
 	onSelect: (passage: Passage, exclusive: boolean) => void;
 	passages: Passage[];
+	preview?: boolean;
 	startPassageId: string;
 	tagColors: Story['tagColors'];
 	visibleZoom: number;
@@ -78,6 +79,7 @@ export const PassageMap: React.FC<PassageMapProps> = props => {
 		onEdit,
 		onSelect,
 		passages,
+		preview,
 		startPassageId,
 		tagColors,
 		visibleZoom,
@@ -214,9 +216,9 @@ export const PassageMap: React.FC<PassageMapProps> = props => {
 			/>
 			<PassageCardGroup
 				onDeselect={onDeselect}
-				onDragStart={handleDragStart}
-				onDrag={handleDrag}
-				onDragStop={handleDragStop}
+				onDragStart={preview ? undefined : handleDragStart}
+				onDrag={preview ? undefined : handleDrag}
+				onDragStop={preview ? undefined : handleDragStop}
 				onEdit={onEdit}
 				onSelect={handleSelect}
 				passages={passages}

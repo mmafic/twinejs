@@ -5,6 +5,7 @@ import {AppActions, BuildActions} from '../../../route-actions';
 import {Story} from '../../../store/stories';
 import {Point} from '../../../util/geometry';
 import {PassageActions} from './passage/passage-actions';
+import { SaveToLibraryButton } from './save-to-library-button';
 import {StoryActions} from './story/story-actions';
 import {UndoRedoButtons} from './undo-redo-buttons';
 import {ZoomButtons} from './zoom-buttons';
@@ -24,7 +25,7 @@ export const StoryEditToolbar: React.FC<StoryEditToolbarProps> = props => {
 			pinnedControls={
 				<>
 					<ZoomButtons story={story} />
-					<UndoRedoButtons />
+					{story.preview ? <SaveToLibraryButton story={story} /> : <UndoRedoButtons />}
 				</>
 			}
 			tabs={{

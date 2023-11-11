@@ -45,6 +45,18 @@ export const Routes: React.FC = () => {
 					<Route path="/stories/:storyId">
 						<StoryEditRoute />
 					</Route>
+					<Route path="/preview/play">
+						<StoryPlayRoute />
+					</Route>
+					<Route path="/preview/proof">
+						<StoryProofRoute />
+					</Route>
+					<Route path="/preview/test">
+						<StoryTestRoute />
+					</Route>
+					<Route path="/preview">
+						<StoryEditRoute />
+					</Route>
 					<Route
 						path="*"
 						render={path => {

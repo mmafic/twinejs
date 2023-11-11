@@ -34,10 +34,12 @@ export function importStories(
 
 			const props: Partial<Story> = {...importStory};
 
-			delete props.id;
+			if (!importStory.preview) {
+				delete props.id;
+			}
 
-			const existingStory = existingStories.find(
-				s => storyFileName(s) === storyFileName(importStory)
+			const existingStory = !importStory.preview && existingStories.find(
+				s => !s.preview && storyFileName(s) === storyFileName(importStory)
 			);
 
 			// Do an update so that if something goes awry, we won't have deleted the

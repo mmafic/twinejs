@@ -21,3 +21,7 @@
 .story-search-dialog .search-fields .code-area {
 	height: 5em;
 }
+
+.story-search-dialog .search-matches {
+	line-height: var(--control-height);
+}

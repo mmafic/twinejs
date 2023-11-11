@@ -51,6 +51,7 @@
 		},
 		"storySearch": {
 			"title": "Cerca i reemplaça",
+			"searchOnlyTitle": "Cerca",
 			"replaceWith": "Reemplaça amb"
 		},
 		"storyStylesheet": {
@@ -71,6 +72,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Cerca i reemplaça",
+				"find": "Cerca"
+			},
 			"topBar": {
 				"addPassage": "Passatge",
 				"editJavaScript": "Edita el JavaScript de la història",

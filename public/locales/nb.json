@@ -45,7 +45,7 @@
 		"storyJavaScript": {
 			"explanation": "Alle JavaScript som er lagt til her, vil umiddelbart kjøre når historien din åpnes i en nettleser."
 		},
-		"storySearch": {"title": "Finn og erstatt", "replaceWith": "Erstatt med"},
+		"storySearch": {"title": "Finn og erstatt", "searchOnlyTitle": "Finn", "replaceWith": "Erstatt med"},
 		"storyStylesheet": {
 			"explanation": "All CSS-kode som er lagt til her, vil tilsidesette standardutseendet til historien din."
 		},
@@ -58,6 +58,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Finn og erstatt",
+				"find": "Finn"
+			},
 			"topBar": {
 				"addPassage": "Passasje",
 				"editJavaScript": "Rediger historie JavaScript",

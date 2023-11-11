@@ -5,13 +5,17 @@ import {IconButton} from '../control/icon-button';
 
 export interface IndentButtonsProps {
 	/**
+	 * Disables both buttons no matter the state of the editor.
+	 */
+	disabled?: boolean;
+	/**
 	 * CodeMirror instance to interact with.
 	 */
 	editor?: CodeMirror.Editor;
 }
 
 export const IndentButtons: React.FC<IndentButtonsProps> = props => {
-	const {editor} = props;
+	const {disabled, editor} = props;
 	const {t} = useTranslation();
 
 	function execCommand(command: string) {
@@ -22,13 +26,13 @@ export const IndentButtons: React.FC<IndentButtonsProps> = props => {
 	return (
 		<>
 			<IconButton
-				disabled={!editor}
+				disabled={disabled || !editor}
 				icon={<IconIndentIncrease />}
 				label={t('components.indentButtons.indent')}
 				onClick={() => execCommand('indentMore')}
 			/>
 			<IconButton
-				disabled={!editor}
+				disabled={disabled || !editor}
 				icon={<IconIndentDecrease />}
 				label={t('components.indentButtons.unindent')}
 				onClick={() => execCommand('indentLess')}

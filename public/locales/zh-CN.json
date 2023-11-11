@@ -25,7 +25,8 @@
 		"edit": "编辑",
 		"editCount": "编辑（{{count}}）",
 		"help": "帮助",
-		"import": "导入",
+		"importFromFile": "从文件导入",
+		"importFromUrl": "从 URL 导入",
 		"maximize": "最大化",
 		"more": "更多",
 		"new": "新建",
@@ -226,6 +227,7 @@
 		},
 		"storySearch": {
 			"title": "查找替换",
+			"searchOnlyTitle": "查找",
 			"find": "查找",
 			"includePassageNames": "包含名称",
 			"matchCase": "匹配大小写",
@@ -282,6 +284,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "查找替换",
+				"find": "搜寻",
 				"goTo": "跳转到",
 				"javaScript": "JavaScript",
 				"passageTags": "片段标签",

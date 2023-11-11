@@ -32,10 +32,11 @@ export interface StorySearchDialogProps extends DialogComponentProps {
 	flags: StorySearchFlags;
 	replace: string;
 	storyId: string;
+	disableReplace?: boolean;
 }
 
 export const StorySearchDialog: React.FC<StorySearchDialogProps> = props => {
-	const {find, flags, replace, storyId, onClose, onChangeProps, ...other} =
+	const {find, flags, replace, storyId, onClose, onChangeProps, disableReplace, ...other} =
 		props;
 	const closingRef = React.useRef(false);
 	const {dispatch, stories} = useUndoableStoriesContext();
@@ -114,7 +115,7 @@ export const StorySearchDialog: React.FC<StorySearchDialogProps> = props => {
 			{...other}
 			className="story-search-dialog"
 			fixedSize
-			headerLabel={t('dialogs.storySearch.title')}
+			headerLabel={disableReplace ? t('dialogs.storySearch.searchOnlyTitle') : t('dialogs.storySearch.title')}
 			onClose={handleClose}
 		>
 			<div className="search-fields">
@@ -127,12 +128,14 @@ export const StorySearchDialog: React.FC<StorySearchDialogProps> = props => {
 					}}
 					value={find}
 				/>
-				<CodeArea
-					label={t('dialogs.storySearch.replaceWith')}
-					onBeforeChange={handleReplaceWithChange}
-					options={{extraKeys: ignoreTab, mode: 'text'}}
-					value={replace}
-				/>
+				{!disableReplace && (
+					<CodeArea
+						label={t('dialogs.storySearch.replaceWith')}
+						onBeforeChange={handleReplaceWithChange}
+						options={{extraKeys: ignoreTab, mode: 'text'}}
+						value={replace}
+					/>
+				)}
 			</div>
 			<div className="search-flags">
 				<CheckboxButton
@@ -152,14 +155,16 @@ export const StorySearchDialog: React.FC<StorySearchDialogProps> = props => {
 				/>
 			</div>
 			<div className="search-results">
-				<IconButton
-					disabled={matches.length === 0}
-					icon={<IconReplace />}
-					label={t('dialogs.storySearch.replaceAll')}
-					onClick={handleReplace}
-					variant="danger"
-				/>
-				<span>
+				{disableReplace ? <div /> : (
+					<IconButton
+						disabled={matches.length === 0}
+						icon={<IconReplace />}
+						label={t('dialogs.storySearch.replaceAll')}
+						onClick={handleReplace}
+						variant="danger"
+					/>
+				)}
+				<span className="search-matches">
 					{find &&
 						(matches.length > 0
 							? t('dialogs.storySearch.matchCount', {count: matches.length})

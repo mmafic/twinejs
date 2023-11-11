@@ -25,7 +25,8 @@
 		"edit": "Düzenle",
 		"editCount": "Düzenle ({{count}})",
 		"help": "Yardım",
-		"import": "İçe Aktar",
+		"importFromFile": "Dosyadan İçe Aktar",
+		"importFromUrl": "URL'den İçe Aktar",
 		"maximize": "Kapla",
 		"more": "Daha Fazla",
 		"new": "Yeni",
@@ -226,6 +227,7 @@
 		},
 		"storySearch": {
 			"title": "Bul ve Değiştir",
+			"searchOnlyTitle": "Bul",
 			"find": "Bul",
 			"includePassageNames": "Bölüm Başlıklarını Dahil Et",
 			"matchCase": "Büyük Küçük Harf Eşleştir",
@@ -281,6 +283,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "Bul ve Değiştir",
+				"find": "Bul",
 				"javaScript": "JavaScript",
 				"passageTags": "Bölüm Etiketleri",
 				"snapToGrid": "Kılavuza Uydur",

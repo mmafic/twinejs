@@ -49,16 +49,18 @@ export const PassageActions: React.FC<PassageActionsProps> = props => {
 
 	return (
 		<ButtonBar>
-			<CreatePassageButton getCenter={getCenter} story={story} />
-			<EditPassagesButton passages={selectedPassages} story={story} />
-			<RenamePassageButton
-				onRename={name => handleRename(name, soloSelectedPassage)}
-				passage={soloSelectedPassage}
-				story={story}
-			/>
-			<DeletePassagesButton passages={selectedPassages} story={story} />
-			<TestPassageButton passage={soloSelectedPassage} story={story} />
-			<StartAtPassageButton passage={soloSelectedPassage} story={story} />
+			{!story.preview && <>
+				<CreatePassageButton getCenter={getCenter} story={story} />
+				<EditPassagesButton passages={selectedPassages} story={story} />
+				<RenamePassageButton
+					onRename={name => handleRename(name, soloSelectedPassage)}
+					passage={soloSelectedPassage}
+					story={story}
+				/>
+				<DeletePassagesButton passages={selectedPassages} story={story} />
+				<TestPassageButton passage={soloSelectedPassage} story={story} />
+				<StartAtPassageButton passage={soloSelectedPassage} story={story} />
+			</>}
 			<GoToPassageButton onOpenFuzzyFinder={onOpenFuzzyFinder} />
 			<SelectAllPassagesButton story={story} />
 		</ButtonBar>

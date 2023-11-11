@@ -50,7 +50,7 @@
 		"storyJavaScript": {
 			"explanation": "Любой JavaScript-код, введённый здесь, будет немедленно исполнен, как только история будет открыта в веб-браузере."
 		},
-		"storySearch": {"title": "Найти и заменить", "replaceWith": "Заменить на"},
+		"storySearch": {"title": "Найти и заменить", "searchOnlyTitle": "Найти", "replaceWith": "Заменить на"},
 		"storyStylesheet": {
 			"explanation": "Любой CSS, введённый тут, переопределит внешний вид по умолчанию для вашей истории."
 		},
@@ -63,6 +63,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Найти и заменить",
+				"find": "Найти"
+			},
 			"topBar": {
 				"addPassage": "Параграф",
 				"editJavaScript": "Редактировать JavaScript",

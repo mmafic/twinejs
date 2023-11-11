@@ -49,6 +49,7 @@
 		},
 		"storySearch": {
 			"title": "Cari dan Gantikan",
+			"searchOnlyTitle": "Cari",
 			"replaceWith": "Ganti Dengan"
 		},
 		"storyStylesheet": {
@@ -63,6 +64,10 @@
 	},
 	"routes": {
 		"storyEdit": {
+			"toolbar": {
+				"findAndReplace": "Cari dan Gantikan",
+				"find": "Cari"
+			},
 			"topBar": {
 				"addPassage": "Petikan",
 				"editJavaScript": "Sunting Cerita JavaScript",

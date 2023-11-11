@@ -34,7 +34,8 @@
 		"details": "Détails",
 		"editCount": "Modifier ({{count}})",
 		"help": "Aide",
-		"import": "Import",
+		"importFromFile": "Importer depuis un fichier",
+		"importFromUrl": "Importer à partir d'une URL",
 		"more": "Plus",
 		"new": "Nouveau",
 		"next": "Suivant",
@@ -194,6 +195,7 @@
 		},
 		"storySearch": {
 			"title": "Chercher et Remplacer",
+			"searchOnlyTitle": "Rechercher",
 			"find": "Rechercher",
 			"includePassageNames": "Inclure les noms des passages",
 			"matchCase": "Casse exacte",
@@ -286,6 +288,7 @@
 			},
 			"toolbar": {
 				"findAndReplace": "Chercher et Remplacer",
+				"find": "Chercher",
 				"javaScript": "JavaScript",
 				"passageTags": "Balises du passage",
 				"snapToGrid": "Ajuster à la grille",

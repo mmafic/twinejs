@@ -25,7 +25,8 @@
 		"edit": "편집",
 		"editCount": "편집 ({{count}})",
 		"help": "도움말",
-		"import": "가져오기",
+		"importFromFile": "파일에서 가져오기",
+		"importFromUrl": "URL에서 가져오기",
 		"maximize": "최대화",
 		"more": "더 보기",
 		"new": "새 스토리",
@@ -226,6 +227,7 @@
 		},
 		"storySearch": {
 			"title": "찾기 및 바꾸기",
+			"searchOnlyTitle": "찾기",
 			"find": "찾기",
 			"includePassageNames": "구절 이름 포함",
 			"matchCase": "대소문자 구별",
@@ -285,6 +287,7 @@
 		"storyEdit": {
 			"toolbar": {
 				"findAndReplace": "찾기 및 바꾸기",
+				"find": "찾다",
 				"goTo": "찾기",
 				"javaScript": "JavaScript",
 				"passageTags": "구절 태그",

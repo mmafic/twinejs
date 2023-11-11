@@ -68,8 +68,7 @@ export function saveMiddleware(state: StoriesState, action: StoriesAction) {
 			if (!action.props.name) {
 				throw new Error('Story was created but with no name specified');
 			}
-
-			const story = storyWithName(state, action.props.name);
+			const story = action.props.id ? storyWithId(state, action.props.id) : storyWithName(state, action.props.name);
 
 			doUpdateTransaction(transaction => {
 				saveStory(transaction, story);

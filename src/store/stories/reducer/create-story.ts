@@ -11,8 +11,8 @@ export function createStory(state: StoriesState, storyProps: Partial<Story>) {
 	}
 
 	if (
-		'name' in storyProps &&
-		state.some(story => story.name === storyProps.name)
+		'name' in storyProps && !storyProps.preview &&
+		state.some(story => !story.preview && story.name === storyProps.name)
 	) {
 		console.warn(
 			`There is already a story in state with name "${storyProps.name}", taking no action`
@@ -37,6 +37,7 @@ export function createStory(state: StoriesState, storyProps: Partial<Story>) {
 	story.passages = story.passages.map(passage => ({
 		...passageDefaults,
 		...passage,
+		id: uuid(),
 		story: story.id
 	}));
 

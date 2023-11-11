@@ -7,17 +7,18 @@ import {Story} from '../../../../store/stories';
 
 export interface FindReplaceButtonProps {
 	story: Story;
+	disableReplace?: boolean;
 }
 
 export const FindReplaceButton: React.FC<FindReplaceButtonProps> = props => {
-	const {story} = props;
+	const {story, disableReplace} = props;
 	const {dispatch} = useDialogsContext();
 	const {t} = useTranslation();
 
 	return (
 		<IconButton
 			icon={<IconSearch />}
-			label={t('routes.storyEdit.toolbar.findAndReplace')}
+			label={disableReplace ? t('routes.storyEdit.toolbar.find') : t('routes.storyEdit.toolbar.findAndReplace')}
 			onClick={() =>
 				dispatch({
 					type: 'addDialog',
@@ -30,7 +31,8 @@ export const FindReplaceButton: React.FC<FindReplaceButtonProps> = props => {
 							useRegexes: false
 						},
 						replace: '',
-						storyId: story.id
+						storyId: story.id,
+						disableReplace,
 					}
 				})
 			}
